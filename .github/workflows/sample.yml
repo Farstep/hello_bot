@@ -32,6 +32,9 @@ jobs:
           pip install line-bot-sdk
           pip install python-dotenv
       - name: Run script
+        env:
+          CHANNEL_ACCESS_TOKEN: ${{ secrets.CHANNEL_ACCESS_TOKEN }}
+          USER_ID: ${{ secrets.USER_ID }}
         run: |
           # main.pyの実行
           python main.py
